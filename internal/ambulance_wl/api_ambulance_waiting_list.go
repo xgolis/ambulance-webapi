@@ -38,7 +38,7 @@ type AmbulanceWaitingListAPI interface {
 
  }
 
-// partial implementation of AmbulanceWaitingListAPI - all functions must be implemented in add on files
+ // partial implementation of AmbulanceWaitingListAPI - all functions must be implemented in add on files
 type implAmbulanceWaitingListAPI struct {
 
 }
@@ -54,6 +54,7 @@ func (this *implAmbulanceWaitingListAPI) addRoutes(routerGroup *gin.RouterGroup)
   routerGroup.Handle( http.MethodGet, "/waiting-list/:ambulanceId/entries/:entryId", this.GetWaitingListEntry)
   routerGroup.Handle( http.MethodPut, "/waiting-list/:ambulanceId/entries/:entryId", this.UpdateWaitingListEntry)
 }
+
 
 // Copy following section to separate file, uncomment, and implement accordingly
 // // CreateWaitingListEntry - Saves new entry into waiting list
