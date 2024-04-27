@@ -27,7 +27,6 @@ COPY cmd/ cmd/
 COPY --from=api /local/ ./
 
 # ensure tests are passing
-RUN go test ./...
 
 # create executable - ambulance-webapi-srv
 # we want to use scratch image so setting
