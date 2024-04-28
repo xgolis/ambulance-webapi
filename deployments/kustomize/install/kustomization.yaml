@@ -9,10 +9,15 @@ configMapGenerator:
   - name: tg-ambulance-webapi-mongodb-init
     files:
       - params/init-db.js
+    options:
+      disableNameSuffixHash: true
   - name: tg-ambulance-webapi-config
     literals:
       - database=tg-ambulance
       - collection=ambulance
+    options:
+      disableNameSuffixHash: true
+
 patches:
  - path: patches/webapi.deployment.yaml
    target:
